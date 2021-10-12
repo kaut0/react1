@@ -9,16 +9,7 @@ const AppHeader = () => {
     
     <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
       <Container>
-        <Navbar.Brand href="">Home</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav>
-            <Nav.Link href="">Rookie</Nav.Link>
-            <Nav.Link href="">Champion</Nav.Link>
-            <Nav.Link href="">Ultimate</Nav.Link>
-            <Nav.Link href="">Mega</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
+        <Navbar.Brand href="">Pokemon</Navbar.Brand>
       </Container>
     </Navbar>
   );

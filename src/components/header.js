@@ -1,22 +1,30 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { CarouselItem } from "react-bootstrap";
-import Carousel from "react-bootstrap/Carousel";
+import { Container, Col, Row, Card, CardGroup } from "react-bootstrap";
 
 const Header = ({ api }) => {
   return (
-    <header>
-      {api.results.map((pokemon) => (
-        <div key={pokemon.id}>
-          <Carousel variant="dark">
-            <CarouselItem interval={2500}>
-                <Carousel.Caption>
-                    <h1>{pokemon.name}</h1>
-                </Carousel.Caption>
-            </CarouselItem>
-          </Carousel>
-        </div>
-      ))}
-    </header>
+    // <header>
+    //   {api.results.map((pokemon) => (
+    //     <div key={pokemon.id}>
+    //       <h1>{pokemon.name}</h1>
+
+    //     </div>
+    //   ))}
+    // </header>
+    <Container fluid>
+      <Row>
+        <Col>
+            {api.results.map((pokemon) => (
+              <Card>
+                <Card.Body>
+                  <Card.Title>{pokemon.name}</Card.Title>
+                  <Card.Link href={pokemon.url}>{pokemon.url}</Card.Link>
+                </Card.Body>
+              </Card>
+            ))}
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
