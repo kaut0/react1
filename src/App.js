@@ -1,26 +1,14 @@
-// import './App.css';
-import { useState, useEffect } from 'react';
+import './App.css';
 import './assets/style.css'
 import Header from './components/header';
 import Home from './components/home';
 import AppHeader from './components/navbar'
+import Fetch from './Fetch';
 
 
 function App() {
 
-  //url api
-  const url = "https://pokeapi.co/api/v2/pokemon/"
-  const urlDigimon = "https://digimon-api.vercel.app/api/digimon" 
-  //state
-  const [api, setApi] = useState(null)
-
-  
-  //comsume api
-  useEffect(()=>{
-    fetch(url).then(res=>{return res.json()}).then(data=>{
-      setApi(data)
-    })
-  }, [])
+  const { data: api, loading, error } = Fetch('https://pokeapi.co/api/v2/pokemon/')  
 
   // console.log(api.results)
   return (
@@ -31,6 +19,8 @@ function App() {
             {/* Disini Isi */}
             {/* <Home /> */}
             <div className='corausel'>
+              {loading && <div><h1>Now Loading...</h1></div>}
+              {error && <div><h1> { error } </h1></div>}
               {api && <Header api={api} />}
             </div>
 

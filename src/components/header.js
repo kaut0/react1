@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Col, Row, Card, CardGroup } from "react-bootstrap";
+import { Container, Col, Row, Card } from "react-bootstrap";
 
 const Header = ({ api }) => {
   return (
@@ -17,7 +17,7 @@ const Header = ({ api }) => {
             {api.results.map((pokemon) => (
               <Card>
                 <Card.Body>
-                  <Card.Title>{pokemon.name}</Card.Title>
+                  <Card.Title key={pokemon.id}>{pokemon.name}</Card.Title>
                   <Card.Link href={pokemon.url}>{pokemon.url}</Card.Link>
                 </Card.Body>
               </Card>
