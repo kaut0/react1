@@ -17,7 +17,7 @@ const Header = ({ api }) => {
             {api.results.map((pokemon) => (
               <Card>
                 <Card.Body>
-                  <Card.Title key={pokemon.id}>{pokemon.name}</Card.Title>
+                  <Card.Title key={pokemon.id} title="bulbasaur"><p>{pokemon.name}</p></Card.Title>
                   <Card.Link href={pokemon.url}>{pokemon.url}</Card.Link>
                 </Card.Body>
               </Card>

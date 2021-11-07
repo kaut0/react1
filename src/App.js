@@ -14,7 +14,7 @@ function App() {
   return (
       <div className='App'>
         {/* Header */}
-        <AppHeader api = {api} />
+        <AppHeader title = "pokemon" />
         <div className='Content'>
             {/* Disini Isi */}
             {/* <Home /> */}
